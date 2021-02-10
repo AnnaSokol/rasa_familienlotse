@@ -1,42 +1,6 @@
-actions:
-- utter_ask_elterngeld_priorknowledge
-- utter_ask_elterngeld_subtopic
-- utter_ask_knowmore
-- utter_ask_permission_familydescription
-- utter_distinguish_period_elterngeld_elternzeit
-- utter_distinguish_requirements_elterngeld_elternzeit
-- utter_elterngeld_amount_reference
-- utter_elterngeld_application_link
-- utter_elterngeld_application_reference
-- utter_elterngeld_inform
-- utter_elterngeld_period_reference
-- utter_elterngeld_precise_general
-- utter_elterngeld_reference
-- utter_elternzeit_notification_reference
-- utter_elternzeit_period_reference
-- utter_elternzeit_reference
-- utter_elternzeit_requirements_reference
-- utter_im_here_4_u
-- utter_more_info
-- utter_mutterschutz_inform
-- utter_mutterschutz_mutterschutzfrist
-- utter_mutterschutz_reference
-- utter_mutterschutzfrist_periodreply
-- utter_recommend_elterngeld
-- utter_telegram_code
-- utter_telegram_offer
-- utter_welcomeback
-entities:
-- elterngeld_care
-- elterngeld_residence
-- elterngeld_residence_link
-- elterngeld_samehousehold
-- elterngeld_workparttime
-- familydescription_parent
-- familydescription_pregnancy_month
-forms:
-- elterngeldrequirements_form
-- familydescription_form
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
 intents:
 - choose_elterngeld_application
 - choose_elterngeld_general
@@ -49,7 +13,6 @@ intents:
 - period_inform
 - deny
 - choose_request_telegramcode
-- elternzeit_period
 - choose_elterngeld_amount
 - ask_mutterschutzfrist_period
 - choose_elterngeld_residence
@@ -59,7 +22,6 @@ intents:
 - mutterschutz_topic
 - ask_mutterschutz_difference_mutterschutzfrist
 - choose_mutterschutz_general
-- choose_mutterschutzfrist_period
 - elternzeit_topic
 - greet_elternzeit
 - elternzeit_timepartner
@@ -67,15 +29,40 @@ intents:
 - choose_elternzeit_period
 - choose_elternzeit_requirements
 - get_started
-- start
 - out_of_scope
 - greet
 - goodbye
-- greet_telegram
 - who_are_you
 - how_are_you
 - feeling_good
 - feeling_bad
+entities:
+- elterngeld_residence
+- elterngeld_residence_link
+- familydescription_parent
+- familydescription_pregnancy_month
+slots:
+  elterngeld_care:
+    type: unfeaturized
+    influence_conversation: false
+  elterngeld_residence_link:
+    type: unfeaturized
+    influence_conversation: false
+  elterngeld_samehousehold:
+    type: unfeaturized
+    influence_conversation: false
+  elterngeld_workparttime:
+    type: unfeaturized
+    influence_conversation: false
+  familydescription_parent:
+    type: unfeaturized
+    influence_conversation: false
+  familydescription_pregnancy_month:
+    type: unfeaturized
+    influence_conversation: false
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
 responses:
   utter_ask_continue:
   - text: Tut mir leid, ich kann Dir gerade nicht ganz folgen. Möchtest Du weitermachen?
@@ -318,23 +305,36 @@ responses:
   - text: Willkommen zurück 🌞
   utter_welcomeback_time:
   - text: Hey, nur noch 9 Wochen bis zum großen Tag! ✨
-session_config:
-  carry_over_slots_to_new_session: false
-  session_expiration_time: 60
-slots:
-  elterngeld_care:
-    type: unfeaturized
-  elterngeld_residence:
-    type: text
-  elterngeld_residence_link:
-    type: unfeaturized
-  elterngeld_samehousehold:
-    type: unfeaturized
-  elterngeld_workparttime:
-    type: unfeaturized
-  familydescription_parent:
-    type: unfeaturized
-  familydescription_pregnancy_month:
-    type: unfeaturized
-  requested_slot:
-    type: unfeaturized
+actions:
+- utter_ask_elterngeld_priorknowledge
+- utter_ask_elterngeld_subtopic
+- utter_ask_knowmore
+- utter_ask_permission_familydescription
+- utter_distinguish_period_elterngeld_elternzeit
+- utter_distinguish_requirements_elterngeld_elternzeit
+- utter_elterngeld_amount_reference
+- utter_elterngeld_application_link
+- utter_elterngeld_application_reference
+- utter_elterngeld_inform
+- utter_elterngeld_period_reference
+- utter_elterngeld_precise_general
+- utter_elterngeld_reference
+- utter_elternzeit_notification_reference
+- utter_elternzeit_period_reference
+- utter_elternzeit_reference
+- utter_elternzeit_requirements_reference
+- utter_im_here_4_u
+- utter_more_info
+- utter_mutterschutz_inform
+- utter_mutterschutz_mutterschutzfrist
+- utter_mutterschutz_reference
+- utter_mutterschutzfrist_periodreply
+- utter_recommend_elterngeld
+- utter_telegram_code
+- utter_telegram_offer
+- utter_welcomeback
+- elterngeldrequirements_form
+- familydescription_form
+forms:
+  elterngeldrequirements_form: {}
+  familydescription_form: {}
