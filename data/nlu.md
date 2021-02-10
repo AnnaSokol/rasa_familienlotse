@@ -311,6 +311,25 @@
 - wie kann ich Elternzeit anmelden
 - wo kann ich elternzeit anmelden?
 
+## intent:choose_mutterschutzfrist_period
+- Mutterschutzfrist
+
+## intent:greet_telegram
+- telegram
+
+## intent:elternzeit_period
+- elternzeit_periode
+
+## intent:start
+- start
+
+## intent:elterngeld_care
+- elterngeld care
+- ...............................
+
+## intent:elterngeld_workparttime
+- elterngeld workparttime
+
 ## synonym:1
 - 1. Monat
 - erster Monat
